@@ -58,8 +58,8 @@ train a net so it will perform better next time on a similar image.
 
 **Weights for the network**
 
-This repository contains only the code base needed to run the net. Pre-trained weights are available for now through my dropbox account
-because they weight too much (lol) - about 700 Mb. You need to download them to use StarNet:
+This repository contains only a code base needed to run the net. Pre-trained weights are available for now through my dropbox account
+because they weight too much (lol) - about 700 Mb. You need to download them to begin using StarNet:
 
 Weights are available under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
 Attribution-NonCommercial-ShareAlike 4.0 International Creative Commons</a> license.
@@ -70,7 +70,7 @@ You can transform, and build your projects upon them.
 You can **NOT** use them for commercial purposes.
 You must give appropriate credit for usage of these weights.
 
-This code is distributed on an "AS IS" BASIS WITHOUT WARRANTIES OF ANY KIND, express or implied.
+The weights are distributed on an "AS IS" BASIS WITHOUT WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED.
 
 **Some technical info**
  
