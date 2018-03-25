@@ -54,12 +54,16 @@ part** of that image (but not smaller than 256x256 pixels) and run training for 
 transformation of the whole image. This will take a lot of time, of course, but in the end you not only getting a starless image, but also
 train a net so it will perform better next time on a similar image.
 
-4. Also it might help to make image brighter (darker) if it is unusually dark (bright).
+4. Also it might help, for example, to make image brighter (darker) if it is unusually dark (bright), or things like that.
 
 **Weights for the network**
 
 This repository contains only a code base needed to run the net. Pre-trained weights are available for now through my dropbox account
 because they weight too much (lol) - about 700 Mb. You need to download them to begin using StarNet:
+
+<div align="center">
+<a href="https://www.dropbox.com/s/6zrlhrd03hlo810/starnet_weights.zip?dl=0">LINK</a>
+</div>
 
 Weights are available under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
 Attribution-NonCommercial-ShareAlike 4.0 International Creative Commons</a> license.
