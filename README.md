@@ -1,5 +1,7 @@
 **StarNet** is a neural network that can remove stars from images in one simple step leaving only background.
 
+**For example:**
+
 <div align="center">
   <img src="https://github.com/nekitmm/starnet/blob/master/example.jpg"><br><br>
 </div>
