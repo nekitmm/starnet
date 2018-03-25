@@ -55,6 +55,24 @@ transformation of the whole image. This will take a lot of time, of course, but 
 train a net so it will perform better next time on a similar image.
 
 4. Also it might help to make image brighter (darker) if it is unusually dark (bright).
+
+**Weights for the network**
+
+This repository contains only the code base needed to run the net. Pre-trained weights are available for now through my dropbox account
+because they weight too much (lol) - about 700 Mb. You need to download them to use StarNet:
+
+Weights are available under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+Attribution-NonCommercial-ShareAlike 4.0 International Creative Commons</a> license.
+
+In short:
+You are free to use and redistribute them in any medium or format, but only **under the same** license terms.
+You can transform, and build your projects upon them.
+You can **NOT** use them for commercial purposes.
+You must give appropriate credit for usage of these weights.
+
+This code is distributed on an "AS IS" BASIS WITHOUT WARRANTIES OF ANY KIND, express or implied.
+
+**Some technical info**
  
 Throughout the code all input and output images are 8 bits per channel tif images.
 This code in original form will not read any images other than these (like jpeg, etc), but you can change that if you like.
