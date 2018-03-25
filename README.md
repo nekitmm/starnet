@@ -65,6 +65,8 @@ because they weight too much (lol) - about 700 Mb. You need to download them to 
 <a href="https://www.dropbox.com/s/6zrlhrd03hlo810/starnet_weights.zip?dl=0">LINK</a>
 </div>
 
+
+
 Weights are available under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
 Attribution-NonCommercial-ShareAlike 4.0 International Creative Commons</a> license.
 
