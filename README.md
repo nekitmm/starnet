@@ -31,5 +31,5 @@
 
 
 <div align="center">
-  <img src="https://github.com/nekitmm/starnet/blob/master/epoch_5.tif"><br><br>
+  <img src="https://github.com/nekitmm/starnet/blob/master/show.jpg"><br><br>
 </div>
