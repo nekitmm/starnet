@@ -10,19 +10,23 @@ HH objects, etc.
 It is intended to be used by astrophotographers. Primary use is for background nebulosity enhancement in rich star fields,
 but it can also help in creation of nice starless image.
 
+**Usage**
+
 Its primary purpose is to partially replace initial steps of star removal in tutorials, like a great tutorial by Gerald Wechselberger,
 aiming to enhance nebulosity without pushing stars up. The tutorial itself was available under
 <a href="https://dl.dropboxusercontent.com/u/57910417/Howto_enhance_nebuala_without_pushing_stars.wmv">this</a> link, but not any more,
 for some reason. Haven't found any newer links to it. Anyway, you got the idea.
+
+**Suggested Work Flow**
 
 The transformation by this neural net can be part of PixInsight/Photoshop processing work flow. Something like this:
 
 1. Start from **stretched** LRGB image. Save as 8 bits/channel tif file.
 2. Feed to StarNet.
 3. Open output in Photoshop, correct some of the worst artefacts that will most likely appear in the image. If there are huge stars
-in the image left, you will have to take care of them in some other appropriate way.
+in the image left, you will have to take care of them in some other way.
 4. Perhaps use some noise reduction (we don't want to push noise up).
-5. Use resulting image to enhance nebulosity using some method (Screen-Mask-Invert for example).
+5. Use resulting image to enhance nebulosity using some method (Screen-Mask-Invert for example) or enjoy the result.
 6. Profit!
  
 Throughout the code all input and output images are 8 bits per channel tif images.
