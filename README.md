@@ -1,7 +1,13 @@
 **StarNet** is a neural network that can remove stars from images leaving only background.
+
+It will remove most of stars from image except for really huge ones, leaving (hopefully) intact all other small bright things
+whose shape is significantly different from that of a typical star, like small spiral galaxies, fine details
+in nebulosity, HH objects, etc.
+
+It is intended to be used by astrophotographers. Primary use is for background enhancement.
  
- Throughout the code all input and output images are 8 bits per channel tif images.
- This code in original form will not read any images other than these (like jpeg, etc), but you can change that if you like.
+Throughout the code all input and output images are 8 bits per channel tif images.
+This code in original form will not read any images other than these (like jpeg, etc), but you can change that if you like.
  
  
       Modes of use:
