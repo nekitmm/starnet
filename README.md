@@ -1,6 +1,6 @@
 **StarNet** is a neural network that can remove stars from images in one simple step leaving only background.
 
-More technically it is a convolutional residual net with a typical encoder-decoder architecture, with L1, Adversarial and Perceptual losses.
+More technically it is a convolutional residual net with encoder-decoder architecture and with L1, Adversarial and Perceptual losses.
 
 **Small example:**
 
