@@ -149,7 +149,7 @@ GPU was NVidia GeForce 840M 2Gb, compute capability 5.0, CUDA version 9.1
 
 
 
-
+**Couple more examples**
 
 <div align="center">
   <img src="https://github.com/nekitmm/starnet/blob/master/for_git/2.jpg"><br><br>
