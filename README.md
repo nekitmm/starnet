@@ -5,7 +5,7 @@ More technically it is a convolutional residual net with a typical encoder-decod
 **Small example:**
 
 <div align="center">
-  <img src="https://github.com/nekitmm/starnet/blob/master/for_git/1.jpg"><br><br>
+  <img src="https://github.com/nekitmm/starnet/blob/master/example.jpg"><br><br>
 </div>
 
 **Intro**
@@ -78,30 +78,14 @@ train a net so it will perform better next time on a similar image.
 
 4. Also it might help, for example, to make image brighter (darker) if it is unusually dark (bright), or things like that.
 
-5. Sometimes the net will leave small stars in the output, if you feed it very busy image. In this case it is helpful to feed output to the 
-net again.
-
 **Weights for the network**
 
 This repository contains only a code base needed to run the net. Pre-trained weights are available for now through my dropbox account
-because they weight too much (lol) - about 700 Mb. You need to download them and unpack into root folder of starnet (with all
-python scripts, not into some sub-folder) to begin using StarNet:
+because they weight too much (lol) - about 700 Mb. You need to download them to begin using StarNet:
 
 <div align="center">
 <a href="https://www.dropbox.com/s/6zrlhrd03hlo810/starnet_weights.zip?dl=0">LINK</a>
 </div>
-
-**Training Dataset**
-
-This is one part I'd like to keep for myself for now, but you can create your own dataset creating starless versions of your images.
-One extremely important note: the only difference between two images (original and starless) should be stars, which are replaced
-by background in the starless version. The rest of the image should be perfectly intact. If you will throw in a starless image which
-is super nice looking, but in a process of creation of this image you altered much more than just stars, this will only degrade
-network performance. Also be aware that quality of star removal by the net will never be better than that in your training set, so
-if you want a top-notch quality starless images, be ready to provide training images of even higher quality.
-
-I left one training image to show organisation of folders my code expects. Inside a folder named 'train' there are two sub-folders named
-'original' and starless', both should contain equal number of images with identical name pairs.
 
 **Some technical info**
  
@@ -114,7 +98,7 @@ Python and Tensorflow, preferably Tensorflow-GPU if you have an NVidia GPU. In t
 
 I tested it in Python 3.6.3 (Anaconda) + TensorFlow-GPU 1.4.0
 
-Environment: I used Win 10 + Cygwin
+Environment: Win 10 + Cygwin
 
 GPU was NVidia GeForce 840M 2Gb, compute capability 5.0, CUDA version 9.1
 
@@ -152,29 +136,15 @@ GPU was NVidia GeForce 840M 2Gb, compute capability 5.0, CUDA version 9.1
 
 
 
-**Couple more examples**
 
-More examples can be found <a href="https://www.astrobin.com/339099/0/">here</a>.
 
 <div align="center">
-  <img src="https://github.com/nekitmm/starnet/blob/master/for_git/2.jpg"><br><br>
-</div>
-
-Original:
-
-<div align="center">
-  <img src="https://github.com/nekitmm/starnet/blob/master/for_git/3.jpg"><br><br>
-</div>
-
-Starless:
-
-<div align="center">
-  <img src="https://github.com/nekitmm/starnet/blob/master/for_git/4.jpg"><br><br>
+  <img src="https://github.com/nekitmm/starnet/blob/master/show.jpg"><br><br>
 </div>
 
 **Licenses**
 
-Code is available under MIT License, please review LICENSE.md file inside repo. Its very permissive, but no liability
+Code is available under MIT License, please review LICENSE file inside repo. Its very permissive, but no liability
 or warranty of any kind.
 
 Weights are available under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
