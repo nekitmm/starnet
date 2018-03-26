@@ -1,0 +1,5 @@
+To download pre-trained weights, follow this link (~500Mb)
+
+https://www.dropbox.com/s/6zrlhrd03hlo810/starnet_weights.zip?dl=0
+
+And extract all the content into root folder (folder with this file).
