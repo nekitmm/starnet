@@ -20,7 +20,7 @@ but it can also help in creation of nice starless image.
 
 **Usage**
 
-Its primary purpose is to partially replace initial steps of star removal in tutorials, like a great tutorial by Gerald Wechselberger,
+Its primary purpose is to partially replace initial steps of star removal in tutorials, like one by Gerald Wechselberger,
 aiming to enhance nebulosity without pushing stars up. The tutorial itself was available under
 <a href="https://dl.dropboxusercontent.com/u/57910417/Howto_enhance_nebuala_without_pushing_stars.wmv">this</a> link, but not any more,
 for some reason. Haven't found any newer links to it. Anyway, you got the idea.
@@ -65,19 +65,6 @@ because they weight too much (lol) - about 700 Mb. You need to download them to 
 <a href="https://www.dropbox.com/s/6zrlhrd03hlo810/starnet_weights.zip?dl=0">LINK</a>
 </div>
 
-
-
-Weights are available under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
-Attribution-NonCommercial-ShareAlike 4.0 International Creative Commons</a> license.
-
-In short:
-You are free to use and redistribute them in any medium or format, but only **under the same** license terms.
-You can transform, and build your projects upon them.
-You can **NOT** use them for commercial purposes.
-You must give appropriate credit for usage of these weights.
-
-The weights are distributed on an "AS IS" BASIS WITHOUT WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED.
-
 **Some technical info**
  
 Throughout the code all input and output images are 8 bits per channel tif images.
@@ -120,3 +107,18 @@ This code in original form will not read any images other than these (like jpeg,
 <div align="center">
   <img src="https://github.com/nekitmm/starnet/blob/master/show.jpg"><br><br>
 </div>
+
+**Licenses**
+
+Code is available under MIT License, please review LICENSE file inside repo.
+
+Weights are available under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+Attribution-NonCommercial-ShareAlike 4.0 International Creative Commons</a> license.
+
+In short:
+You are free to use and redistribute them in any medium or format, but only **under the same** license terms.
+You can transform, and build your projects upon them.
+You can **NOT** use them for commercial purposes.
+You must give appropriate credit for usage of these weights.
+
+The weights are distributed on an "AS IS" BASIS WITHOUT WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED.
