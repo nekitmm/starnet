@@ -15,7 +15,9 @@ Udea of using Perceptual Adversarial losses is from this paper as well as some o
 Other papers I took ideas from of found useful during development:
 
 <a href="https://arxiv.org/abs/1701.05957">Image De-raining Using a Conditional Generative Adversarial Network</a>
+
 <a href="https://arxiv.org/abs/1606.08921">Image Restoration Using Convolutional Auto-encoders with Symmetric Skip Connections</a>
+
 <a href="http://www.columbia.edu/~jwp2128/Papers/FuHuangetal2017.pdf">Removing rain from single images via a deep detail network</a>
 
 **Small example:**
