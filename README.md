@@ -84,7 +84,7 @@ net again.
 **Weights for the network**
 
 This repository contains only a code base needed to run the net. Pre-trained weights are available for now through my dropbox account
-because they weight too much (lol) - about 700 Mb. You need to download them and unpack into root folder of starnet (with all
+because they weight too much (lol) - about 700 Mb. You need to download them and unpack into root folder of starnet (the one with all
 python scripts, not into some sub-folder) to begin using StarNet:
 
 <div align="center">
