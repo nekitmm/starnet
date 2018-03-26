@@ -1,5 +1,13 @@
 **StarNet** is a neural network that can remove stars from images in one simple step leaving only background.
 
+More technically it is a convolutional residual net with a typical encoder-decoder architecture, with L1, Adversarial and Perceptual losses.
+
+This code is partially based on pix2pix code and ideas from pix2pix paper.
+pix2pix code: https://github.com/phillipi/pix2pix
+pix2pix paper: https://arxiv.org/pdf/1611.07004v1.pdf
+
+
+
 **Small example:**
 
 <div align="center">
@@ -69,7 +77,17 @@ because they weight too much (lol) - about 700 Mb. You need to download them to 
  
 Throughout the code all input and output images are 8 bits per channel tif images.
 This code in original form will not read any images other than these (like jpeg, etc), but you can change that if you like.
- 
+
+**Prerequisites**
+
+Python and Tensorflow, preferably Tensorflow-GPU if you have an NVidia GPU. In this case you will also need CUDA and CuDNN libraries.
+
+I tested it in Python 3.6.3 (Anaconda) + TensorFlow-GPU 1.4.0
+Environment: Win 10 + Cygwin
+GPU was NVidia GeForce 840M 2Gb, compute capability 5.0, CUDA version 9.1
+
+
+
  
       Modes of use:
       
