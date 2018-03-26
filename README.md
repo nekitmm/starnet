@@ -3,10 +3,20 @@
 More technically it is a convolutional residual net with a typical encoder-decoder architecture, with L1, Adversarial and Perceptual losses.
 
 This code is partially based on pix2pix code and ideas from pix2pix paper.
+
 pix2pix code: https://github.com/phillipi/pix2pix
-pix2pix paper: https://arxiv.org/pdf/1611.07004v1.pdf
 
+pix2pix paper: <a href="https://arxiv.org/pdf/1611.07004v1.pdf">Image-to-Image Translation with Conditional Adversarial Networks</a>
 
+Udea of using Perceptual Adversarial losses is from this paper as well as some other ideas:
+
+<a href="https://arxiv.org/abs/1706.09138">Perceptual Adversarial Networks for Image-to-Image Transformation</a>
+
+Other papers I took ideas from of found useful during development:
+
+<a href="https://arxiv.org/abs/1701.05957">Image De-raining Using a Conditional Generative Adversarial Network</a>
+<a href="https://arxiv.org/abs/1606.08921">Image Restoration Using Convolutional Auto-encoders with Symmetric Skip Connections</a>
+<a href="http://www.columbia.edu/~jwp2128/Papers/FuHuangetal2017.pdf">Removing rain from single images via a deep detail network</a>
 
 **Small example:**
 
@@ -83,7 +93,9 @@ This code in original form will not read any images other than these (like jpeg,
 Python and Tensorflow, preferably Tensorflow-GPU if you have an NVidia GPU. In this case you will also need CUDA and CuDNN libraries.
 
 I tested it in Python 3.6.3 (Anaconda) + TensorFlow-GPU 1.4.0
+
 Environment: Win 10 + Cygwin
+
 GPU was NVidia GeForce 840M 2Gb, compute capability 5.0, CUDA version 9.1
 
 
@@ -128,7 +140,8 @@ GPU was NVidia GeForce 840M 2Gb, compute capability 5.0, CUDA version 9.1
 
 **Licenses**
 
-Code is available under MIT License, please review LICENSE file inside repo.
+Code is available under MIT License, please review LICENSE file inside repo. Its very permissive, but no liability
+or warranty of any kind.
 
 Weights are available under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
 Attribution-NonCommercial-ShareAlike 4.0 International Creative Commons</a> license.
