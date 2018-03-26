@@ -109,7 +109,7 @@ Python and Tensorflow, preferably Tensorflow-GPU if you have an NVidia GPU. In t
 
 I tested it in Python 3.6.3 (Anaconda) + TensorFlow-GPU 1.4.0
 
-Environment: Win 10 + Cygwin
+Environment: I used Win 10 + Cygwin
 
 GPU was NVidia GeForce 840M 2Gb, compute capability 5.0, CUDA version 9.1
 

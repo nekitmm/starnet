@@ -1,68 +1,24 @@
 # This file is a part of StarNet code.
+# https://github.com/nekitmm/starnet
+# 
 # StarNet is a neural network that can remove stars from images leaving only background.
 # 
 # Throughout the code all input and output images are 8 bits per channel tif images.
 # This code in original form will not read any images other than these (like jpeg, etc), but you can change that if you like.
 # 
-# 
-#      Modes of use:
-#      
-#      python.exe -u starnet.py transform <input_image> - The most probable use. This command will transform input image (namely will remove stars)
-#                                                         and will create a mask showing changes regions. Output images names will be 
-#                                                         <input_image>_starless.tif and <input_image>_mask.tif
-#      
-#      python.exe -u starnet.py train                   - Use if you want to train the model some more using your training data.
-#                                                         This will also output logs and showcases of training transformations in 
-#                                                         './logs' sub-folder.
-#                                                         
-#      python.exe -u starnet.py plot                    - Will plot graphs from log files. Into './logs' sub-folder.
-#      
-#      python.exe -u starnet.py train new               - use only if you want to train a completely new model, erasing all older weights and other
-#                                                         output, such as logs. Use only if you know what you are doing!
-# 
-#      python.exe -u starnet.py test <input_image>      - this will create some test transformations of patches of the input
-#                                                         Similar to transform, but instead of transforming an entire image,
-#                                                         will create showcases of transformation. Fast option to take a look at possible result.
-#                                                         By default output will be in './test' sub-folder.
-#                                                         
-# 
-# 
-# 
-# Some technical info:
-# Tested in Python 3.6.3 (Anaconda) + TensorFlow-GPU 1.4.0
-# Environment: Win 10 + Cygwin
-# GPU was NVidia GeForce 840M 2Gb, compute capability 5.0, CUDA version 9.1
-# 
-# 
-# This code partially uses pix2pix code and ideas from pix2pix paper.
-# pix2pix code: https://github.com/phillipi/pix2pix
-# pix2pix paper: https://arxiv.org/pdf/1611.07004v1.pdf
-# 
-# 
-# 
-# 
 # Copyright (c) 2018 Nikita Misiura
 # http://www.astrobin.com/users/nekitmm/
 # 
-# 
-# Distributed under Attribution-NonCommercial-ShareAlike 4.0 International Creative Commons license
-#               https://creativecommons.org/licenses/by-nc-sa/4.0/
-# 
-# 
-# 
-# In short:
-# You are free to copy and redistribute this code in any medium or format, but only under the same license terms
-# You can remix, transform, and build upon this code
-# You can not use it for commercial purposes
-# You must give appropriate credit for usage of this code
-# 
 # This code is distributed on an "AS IS" BASIS WITHOUT WARRANTIES OF ANY KIND, express or implied.
+# Please review LICENSE file before use.
 
 import sys
 import time
 import os
-# this line hides lots of additional bulky outputs from TF. Comment out if you debug your script.
+
+# this line hides lots of additional bulky output from TF. Comment out if you debug your script.
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
+
 
 epochs = 100                           # Number of training epochs to do before exiting. You can safely interrupt the script only 
                                        # IN THE MIDDLE OF EPOCH. Do not interrupt the script in between epochs because you might interrupt
