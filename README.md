@@ -5,7 +5,7 @@ More technically it is a convolutional residual net with a typical encoder-decod
 **Small example:**
 
 <div align="center">
-  <img src="https://github.com/nekitmm/starnet/blob/master/example.jpg"><br><br>
+  <img src="https://github.com/nekitmm/starnet/blob/master/for_git/1.jpg"><br><br>
 </div>
 
 **Intro**
@@ -87,6 +87,17 @@ because they weight too much (lol) - about 700 Mb. You need to download them to 
 <a href="https://www.dropbox.com/s/6zrlhrd03hlo810/starnet_weights.zip?dl=0">LINK</a>
 </div>
 
+**Training Dataset**
+
+This is one part I'd like to keep for myself for now, but you can create your own dataset creating starless versions of your images.
+One extremely important note: the only difference between two images (original and starless) should be stars, which are replaced
+by background in the starless version. The rest of the image should be perfectly intact. If you will throw in a starless image which
+is super nice looking, but in a process of creation of this image you altered much more than just stars, this will only degrade
+network performance.
+
+I left one training image to show organisation of folders my code expects. Inside a folder named 'train' there are two sub-folders named
+'original' and starless', both should contain equal number of images with identical name pairs.
+
 **Some technical info**
  
 Throughout the code all input and output images are 8 bits per channel tif images.
@@ -139,7 +150,7 @@ GPU was NVidia GeForce 840M 2Gb, compute capability 5.0, CUDA version 9.1
 
 
 <div align="center">
-  <img src="https://github.com/nekitmm/starnet/blob/master/show.jpg"><br><br>
+  <img src="https://github.com/nekitmm/starnet/blob/master/for_git/2.jpg"><br><br>
 </div>
 
 **Licenses**
