@@ -2,24 +2,6 @@
 
 More technically it is a convolutional residual net with a typical encoder-decoder architecture, with L1, Adversarial and Perceptual losses.
 
-This code is partially based on pix2pix code and ideas from pix2pix paper.
-
-pix2pix code: https://github.com/phillipi/pix2pix
-
-pix2pix paper: <a href="https://arxiv.org/pdf/1611.07004v1.pdf">Image-to-Image Translation with Conditional Adversarial Networks</a>
-
-Udea of using Perceptual Adversarial losses is from this paper as well as some other ideas:
-
-<a href="https://arxiv.org/abs/1706.09138">Perceptual Adversarial Networks for Image-to-Image Transformation</a>
-
-Other papers I took ideas from of found useful during development:
-
-<a href="https://arxiv.org/abs/1701.05957">Image De-raining Using a Conditional Generative Adversarial Network</a>
-
-<a href="https://arxiv.org/abs/1606.08921">Image Restoration Using Convolutional Auto-encoders with Symmetric Skip Connections</a>
-
-<a href="http://www.columbia.edu/~jwp2128/Papers/FuHuangetal2017.pdf">Removing rain from single images via a deep detail network</a>
-
 **Small example:**
 
 <div align="center">
@@ -37,6 +19,26 @@ galaxies, fine details in nebulosity, HH objects, etc.
 
 It is intended to be used by astrophotographers. Primary use is for background nebulosity enhancement in rich star fields,
 but it can also help in creation of nice starless image.
+
+**Literature**
+
+This code is partially based on pix2pix code and ideas from pix2pix paper.
+
+pix2pix code: https://github.com/phillipi/pix2pix
+
+pix2pix paper: <a href="https://arxiv.org/pdf/1611.07004v1.pdf">Image-to-Image Translation with Conditional Adversarial Networks</a>
+
+Udea of using Perceptual Adversarial losses is from this paper as well as some other ideas:
+
+<a href="https://arxiv.org/abs/1706.09138">Perceptual Adversarial Networks for Image-to-Image Transformation</a>
+
+Other papers I took ideas from of found useful during development:
+
+<a href="https://arxiv.org/abs/1701.05957">Image De-raining Using a Conditional Generative Adversarial Network</a>
+
+<a href="https://arxiv.org/abs/1606.08921">Image Restoration Using Convolutional Auto-encoders with Symmetric Skip Connections</a>
+
+<a href="http://www.columbia.edu/~jwp2128/Papers/FuHuangetal2017.pdf">Removing rain from single images via a deep detail network</a>
 
 **Usage**
 
