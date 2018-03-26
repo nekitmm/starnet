@@ -78,6 +78,9 @@ train a net so it will perform better next time on a similar image.
 
 4. Also it might help, for example, to make image brighter (darker) if it is unusually dark (bright), or things like that.
 
+5. Sometimes the net will leave small stars in the output, if you feed it very busy image. In this case it is helpful to feed output to the 
+net again.
+
 **Weights for the network**
 
 This repository contains only a code base needed to run the net. Pre-trained weights are available for now through my dropbox account
@@ -150,6 +153,8 @@ GPU was NVidia GeForce 840M 2Gb, compute capability 5.0, CUDA version 9.1
 
 
 **Couple more examples**
+
+More examples can be found <a href="https://www.astrobin.com/339099/0/">here</a>.
 
 <div align="center">
   <img src="https://github.com/nekitmm/starnet/blob/master/for_git/2.jpg"><br><br>
