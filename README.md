@@ -81,7 +81,8 @@ train a net so it will perform better next time on a similar image.
 **Weights for the network**
 
 This repository contains only a code base needed to run the net. Pre-trained weights are available for now through my dropbox account
-because they weight too much (lol) - about 700 Mb. You need to download them to begin using StarNet:
+because they weight too much (lol) - about 700 Mb. You need to download them and unpack into root folder of starnet (with all
+python scripts, not into some sub-folder) to begin using StarNet:
 
 <div align="center">
 <a href="https://www.dropbox.com/s/6zrlhrd03hlo810/starnet_weights.zip?dl=0">LINK</a>
@@ -93,7 +94,8 @@ This is one part I'd like to keep for myself for now, but you can create your ow
 One extremely important note: the only difference between two images (original and starless) should be stars, which are replaced
 by background in the starless version. The rest of the image should be perfectly intact. If you will throw in a starless image which
 is super nice looking, but in a process of creation of this image you altered much more than just stars, this will only degrade
-network performance.
+network performance. Also be aware that quality of star removal by the net will never be better than that in your training set, so
+if you want a top-notch quality starless images, be ready to provide training images of even higher quality.
 
 I left one training image to show organisation of folders my code expects. Inside a folder named 'train' there are two sub-folders named
 'original' and starless', both should contain equal number of images with identical name pairs.
@@ -153,9 +155,21 @@ GPU was NVidia GeForce 840M 2Gb, compute capability 5.0, CUDA version 9.1
   <img src="https://github.com/nekitmm/starnet/blob/master/for_git/2.jpg"><br><br>
 </div>
 
+Original:
+
+<div align="center">
+  <img src="https://github.com/nekitmm/starnet/blob/master/for_git/3.jpg"><br><br>
+</div>
+
+Starless:
+
+<div align="center">
+  <img src="https://github.com/nekitmm/starnet/blob/master/for_git/4.jpg"><br><br>
+</div>
+
 **Licenses**
 
-Code is available under MIT License, please review LICENSE file inside repo. Its very permissive, but no liability
+Code is available under MIT License, please review LICENSE.md file inside repo. Its very permissive, but no liability
 or warranty of any kind.
 
 Weights are available under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
