@@ -241,9 +241,11 @@ def model(inputs, targets, lr = [0.0002, 0.0002]):
             p1_fake, p2_fake, p3_fake, p4_fake, p5_fake, p6_fake, p7_fake, p8_fake, predict_fake = discriminator(outputs)
             
     with tf.name_scope("discriminator_loss"):
+        # maximizes probability of being real picture. Oprimal for discriminator is predict_real = 1, predict_fake = 0. 
         discrim_loss = tf.reduce_mean(-(tf.log(predict_real + 1E-8) + tf.log(1 - predict_fake + 1E-8)))
         
     with tf.name_scope("generator_loss"):
+        # the best for generator is predict_fake = 1
         gen_loss_GAN = tf.reduce_mean(-tf.log(predict_fake + 1E-8))
         gen_p1_loss = tf.reduce_mean(tf.abs(p1_fake - p1_real))
         gen_p2_loss = tf.reduce_mean(tf.abs(p2_fake - p2_real))
@@ -254,7 +256,7 @@ def model(inputs, targets, lr = [0.0002, 0.0002]):
         gen_p7_loss = tf.reduce_mean(tf.abs(p7_fake - p7_real))
         gen_p8_loss = tf.reduce_mean(tf.abs(p8_fake - p8_real))
         gen_loss_L1 = tf.reduce_mean(tf.abs(targets - outputs))
-        gen_loss = gen_p1_loss * 0.1 + gen_p2_loss * 1 + gen_p3_loss * 1 + gen_p4_loss * 1 + gen_p5_loss * 1 + gen_p6_loss * 1 + gen_p7_loss * 1 + gen_p8_loss * 1 + gen_loss_L1 * 10
+        gen_loss = gen_loss_GAN * 0.01 + gen_p1_loss * 0.1 + gen_p2_loss * 1 + gen_p3_loss * 1 + gen_p4_loss * 1 + gen_p5_loss * 1 + gen_p6_loss * 1 + gen_p7_loss * 1 + gen_p8_loss * 10 + gen_loss_L1 * 10
         
         gen_acc = tf.reduce_mean(tf.cast(tf.equal(tf.cast(targets * 100, tf.int8), tf.cast(outputs * 100, tf.int8)), tf.float32))
         
@@ -273,7 +275,7 @@ def model(inputs, targets, lr = [0.0002, 0.0002]):
             gen_grads_and_vars = gen_optim.compute_gradients(gen_loss, var_list = gen_tvars)
             gen_train = gen_optim.apply_gradients(gen_grads_and_vars)
     
-    ema = tf.train.ExponentialMovingAverage(decay = 0.99, zero_debias = True)
+    ema = tf.train.ExponentialMovingAverage(decay = 0.999, zero_debias = True)
     update_losses = ema.apply(losses)
     
     avers = [ema.average(l) for l in losses]

@@ -13,7 +13,7 @@
 # Please review LICENSE file before use.
 
 import numpy as np
-import matplotlib.pyplot as plt  
+import matplotlib.pyplot as plt
 
 LOGS_DIR = './logs/'                   # Output directory.
 
@@ -64,9 +64,9 @@ def plot():
                data_labels = [''],
                X_label = "Epoch",
                data = np.loadtxt(LOGS_DIR + '/total_loss.txt', skiprows = 1, delimiter = '	'))
-    createPlot(file_name = "adversarial_loss",
-               plot_name = "Adversarial loss",
-               data_labels = ['GAN', 'Discriminative'],
+    createPlot(file_name = "adversarial_losses",
+               plot_name = "Adversarial losses",
+               data_labels = ['Discriminative', 'Generative'],
                X_label = "Epoch",
                data = np.loadtxt(LOGS_DIR + '/adversarial_losses.txt', skiprows = 1, delimiter = '	'))
     
@@ -90,7 +90,7 @@ def createPlot(file_name, plot_name, data_labels, X_label, data):
     # ticks and lines
     yaxis_range = np.arange(0, MAX_Y, MAX_Y / 10)
     xaxis_range = np.arange(0, MAX_Y, MAX_Y / 10)
-    plt.yticks(yaxis_range, [str(x) for x in yaxis_range], fontsize = 20)
+    plt.yticks(yaxis_range, [str('%.2f' % x) for x in yaxis_range], fontsize = 20)
     plt.xticks(fontsize = 20)
     for y in yaxis_range:
         plt.plot(range(0, MAX_X + 1), [y] * len(range(0, MAX_X + 1)), "--", lw = 0.5, color = "black", alpha = 0.3)

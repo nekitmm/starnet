@@ -46,14 +46,14 @@ def transform(image, stride):
         sess.run(init)
         
         # restore current state of the model
-        print("Restoring previous state of the model...", end = ' ', flush = True)
+        print("Restoring previous state of the model...")
         saver.restore(sess, "./model.ckpt")
-        print("Done!", flush = True)
+        print("Done!")
         
         # read input image
-        print("Opening input image...", end = ' ', flush = True)
+        print("Opening input image...")
         input = np.array(img.open(image), dtype = np.float32)
-        print("Done!", flush = True)
+        print("Done!")
         
         # rescale to [-1, 1]
         input /= 255
@@ -97,7 +97,7 @@ def transform(image, stride):
         # here goes
         for i in range(ith):
             for j in range(itw):
-                print('Transforming input image... %d%%\r' % int((itw * i + j + 1) * 100 / (ith * itw)), end = '', flush = True)
+                print('Transforming input image... %d%%\r' % int((itw * i + j + 1) * 100 / (ith * itw)))
                 
                 x = stride * i
                 y = stride * j
@@ -110,7 +110,7 @@ def transform(image, stride):
                 
                 # write transformed array to output
                 output[x + offset : x + stride + offset, y + offset: y + stride + offset, :] = result[0, offset : stride + offset, offset : stride + offset, :]
-        print("Transforming input image... Done!", flush = True)
+        print("Transforming input image... Done!")
         
         # rescale back to [0, 1]
         output = (output + 1) / 2
@@ -118,15 +118,15 @@ def transform(image, stride):
         # leave only necessary part, without pads added earlier
         output = output[offset : - (offset + dh), offset : - (offset + dw), :]
         
-        print("Saving output image...", end = ' ', flush = True)
+        print("Saving output image...")
         toimage(output * 255, cmin = 0, cmax = 255).save('./' + image + '_starless.tif')
-        print("Done!", flush = True)
+        print("Done!")
         
-        print("Saving mask...", end = ' ', flush = True)
+        print("Saving mask...")
         # mask showing areas that were changed significantly
         mask = (((backup * 255).astype(np.int_) - (output * 255).astype(np.int_)) > 25).astype(np.int_)
         mask = mask.max(axis = 2, keepdims = True)
         mask = np.concatenate((mask, mask, mask), axis = 2)
         toimage(mask * 255, cmin = 0, cmax = 255).save('./' + image + '_mask.tif')
-        print("Done!", flush = True)
+        print("Done!")
     

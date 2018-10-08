@@ -41,8 +41,13 @@ def open_train_images(addr, list, max):
             starless.append(np.array(img.open(addr + "/starless/" + i), dtype = np.float32))
         return original, starless
     else:
+        used = []
         for i in range(max):
             ind = int(np.random.rand() * len(list))
+            if ind in used:
+                while ind in used:
+                    ind = int(np.random.rand() * len(list))
+            used.append(ind)
             original.append(np.array(img.open(addr + "/original/" + list[ind]), dtype = np.float32))
             starless.append(np.array(img.open(addr + "/starless/" + list[ind]), dtype = np.float32))
         return original, starless
@@ -52,15 +57,42 @@ def list_test_images(addr):
     files = [f for f in listdir(addr) if isfile(join(addr, f)) and f.endswith(".tif")]
     return files
 
-def get_input_img(Xinp, Yinp, size = WINDOW_SIZE):
+def get_input_img(Xinp, Yinp, size = WINDOW_SIZE, rotate = 0, resize = 1):
     assert(Xinp.shape == Yinp.shape)
+    if rotate != 0:
+        Xim = img.fromarray(np.uint8(Xinp))
+        Yim = img.fromarray(np.uint8(Yinp))
+        Xim = Xim.rotate(rotate, resample = img.BICUBIC)
+        Yim = Yim.rotate(rotate, resample = img.BICUBIC)
+        Xinp = np.array(Xim)
+        Yinp = np.array(Yim)
     h, w, _ = Xinp.shape
+    if resize != 1 and h > 600 and w > 600:
+        h = np.int(h * resize)
+        w = np.int(w * resize)
+        Xim = img.fromarray(np.uint8(Xinp))
+        Yim = img.fromarray(np.uint8(Yinp))
+        Xim = Xim.resize((w, h), resample = img.BICUBIC)
+        Yim = Yim.resize((w, h), resample = img.BICUBIC)
+        #Xim.save('./x.png')
+        #Yim.save('./y.png')
+        Xinp = np.array(Xim)
+        Yinp = np.array(Yim)
     y = int(np.random.rand() * (h - size))
     x = int(np.random.rand() * (w - size))
     return (np.array(Xinp[y:y + size, x:x + size, :]) / 255.0 - 0.0, np.array(Yinp[y:y + size, x:x + size, :]) / 255.0 - 0.0)
 
 def get_input_img_with_augmentation(Xinp, Yinp, size = WINDOW_SIZE):
-    (X_, Y_) = get_input_img(Xinp, Yinp, size)
+    # rotate with arbitrary angle
+    if np.random.rand() < 0.33:
+        r = np.random.randint(360)
+    else:
+        r = 0
+    if np.random.rand() < 0.33:
+        s = 0.5 + np.random.rand() * 1.5
+    else:
+        s = 1
+    (X_, Y_) = get_input_img(Xinp, Yinp, size, rotate = r, resize = s)
 
     # flip horizontally
     if np.random.rand() < 0.5:

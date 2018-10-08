@@ -23,7 +23,7 @@ import os
 import time
 
 PANELS = 5                             # Number of panels in output pictures showcasing image transformations done by net.
-MAX_TRAIN_IMGS = 10                    # Max number of training images loaded in each epoch. Increasing this value will increase memory
+MAX_TRAIN_IMGS = 30                    # Max number of training images loaded in each epoch. Increasing this value will increase memory
                                        # consumption, but will make outputs like losses and accuracy more smooth. 10 is default, but the
                                        # optimal value will depend on your machine and training image sizes.
 L1_MULT = 100                          # L1 loss multiplier for output (just because it is much smaller than the most). Default is 100.
@@ -34,7 +34,7 @@ WINDOW_SIZE = 256                      # Size of the image fed to net. Do not ch
                                        # and changing this will force you to train the net anew.
 
 def train(epochs = 1, batch = 1, steps = 1000, output_freq = 50, verbose = False, gen_plots = True,
-          images = True, log_freq = 50, resume = True, learning_rates = [0.0002, 0.0002]):
+          images = True, log_freq = 50, resume = True, learning_rates = [0.002, 0.002]):
     
     if gen_plots:
         import plot
@@ -62,7 +62,7 @@ def train(epochs = 1, batch = 1, steps = 1000, output_freq = 50, verbose = False
         sess.run(init)
         if(resume):
             # restore old state of the model
-            print("Restoring previous state of the model...", end = ' ', flush = True)
+            print("Restoring previous state of the model...")
             saver.restore(sess, "./model.ckpt")
             
             # open log files to append
@@ -75,7 +75,7 @@ def train(epochs = 1, batch = 1, steps = 1000, output_freq = 50, verbose = False
             # load global step
             abs_step = int(np.loadtxt('./step', dtype = np.int))
             
-            print("Done!", flush = True)
+            print("Done!")
         else:
             # create LOGS_DIR directory if does not exist
             if not os.path.exists(LOGS_DIR):
@@ -94,7 +94,11 @@ def train(epochs = 1, batch = 1, steps = 1000, output_freq = 50, verbose = False
             p.write('Epoch	P1	P2	P3	P4	P5	P6	P7	P8\n')
             acc.write('Epoch	Accuracy %\n')
             adv.write('Epoch	GAN	Discriminative\n')
-            
+            p.flush()
+            l1.flush()
+            acc.flush()
+            adv.flush()
+            total.flush()
             # initialize global step as zero
             abs_step = 0
             
@@ -138,7 +142,7 @@ def train(epochs = 1, batch = 1, steps = 1000, output_freq = 50, verbose = False
                     total.write('%.4f	%.5f\n' % (abs_epoch, float(losses[12].eval())))
                     p.write('%.4f	%.5f	%.5f	%.5f	%.5f	%.5f	%.5f	%.5f	%.5f\n' % (abs_epoch, float(losses[4].eval()), float(losses[5].eval()), float(losses[6].eval()), float(losses[7].eval()), float(losses[8].eval()), float(losses[9].eval()), float(losses[10].eval()), float(losses[11].eval())))
                     acc.write('%.4f	%.5f\n' % (abs_epoch, float(ACC_MULT * losses[3].eval())))
-                    adv.write('%.4f	%.5f	%.5f\n' % (abs_epoch, float(losses[1].eval()), float(losses[2].eval())))
+                    adv.write('%.4f	%.5f	%.5f\n' % (abs_epoch, float(losses[0].eval()), float(losses[1].eval())))
             stop = time.time()
             t = float(stop - start)
             # final console output from the epoch

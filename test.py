@@ -47,19 +47,19 @@ def test(input, numtests = 20):
         sess.run(init)
         
         # restore state of the model
-        print("Restoring current state of the model...", end = ' ', flush = True)
+        print("Restoring current state of the model...")
         saver.restore(sess, "./model.ckpt")
-        print("Done!", flush = True)
+        print("Done!")
         
-        print("Opening test image...", end = ' ', flush = True)
+        print("Opening test image...")
         test = np.array(img.open(input), dtype = np.float32)
-        print("Done!", flush = True)
+        print("Done!")
         
         head = np.array(img.open("./test_head.tif"), dtype = np.float32)
         head /= 255
         
         for i in range(numtests):
-            print("Test %d..." % i, end = ' ', flush = True)
+            print("Test %d..." % i)
             all = np.zeros((1, WINDOW_SIZE * 2, 3))
             all = np.concatenate((head, all), axis = 0)
             for d in range(PANELS):
@@ -69,4 +69,4 @@ def test(input, numtests = 20):
                 all = np.concatenate((all, im), axis = 0)
                 all = np.concatenate((all, np.zeros((1, WINDOW_SIZE * 2, 3))), axis = 0)
             toimage(all * 255, cmin = 0, cmax = 255).save(OUT_DIR + '/test_' + str(i) + '.tif')
-            print("Done!", flush = True)
+            print("Done!")

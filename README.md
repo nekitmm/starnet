@@ -172,6 +172,43 @@ Starless:
   <img src="https://github.com/nekitmm/starnet/blob/master/for_git/4.jpg"><br><br>
 </div>
 
+
+**FAQ**
+
+What is all this 'python-sudo-mumbo-jumbo'?
+
+This whole thing works as command line program, which means that there is no graphical interface: you have to
+run it in a console using some text commands (like ones you see above) and it outputs text (and writes image files
+of course!).
+
+The way you get on board with all this will depend on your OS and is hard to squeeze instructions into few words but
+very briefly:
+
+1. For MacOS/Linux it is pretty simple. You should already have console up with python installed. The only thing you will need
+is to use pip to install tensorflow and probably few other packages via:
+
+    pip install tensorflow
+    pip install numpy
+    pip install <whatever is missing>
+    
+2. For Windows it is a bit trickier because console is unusable to say the least. You can use it, but I prefer Cygwin. Next, you
+need to install python. I think installing Anaconda for that is by far the best option. After you got up the console of your choice
+and installed anaconda you use its native pip to install tensorflow (see above) and you should be ready to go.
+
+The whole installation should not need more than installing few software packages and typing few command lines!
+
+2. Where exactly do I put weights of the network?
+
+All the files you download should be in one folder: all the files with extention .py (starnet.py, train.py, transform.py, etc.) should
+be in the same folder with weights for the network (model.ckpt.data-00000-of-00001, model.ckpt.index, model.ckpt.meta, etc.)
+
+**Some Troubleshooting**
+
+1. 'No package named tensorflow'. Should be pretty self-explanatory: your python can not find tensorflow. That means you did not
+run pip to install it (pip install tensorflow) or something went wrong during this step if you did.
+
+2. To be continued
+
 **Licenses**
 
 Code is available under MIT License, please review LICENSE.md file inside repo. Its very permissive, but no liability
