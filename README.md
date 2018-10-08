@@ -187,9 +187,11 @@ very briefly:
 1. For MacOS/Linux it is pretty simple. You should already have console up with python installed. The only thing you will need
 is to use pip to install tensorflow and probably few other packages via:
 
-    pip install tensorflow
-    pip install numpy
-    pip install <whatever is missing>
+        pip install tensorflow
+        
+        pip install numpy
+        
+        pip install <whatever is missing>
     
 2. For Windows it is a bit trickier because console is unusable to say the least. You can use it, but I prefer Cygwin. Next, you
 need to install python. I think installing Anaconda for that is by far the best option. After you got up the console of your choice
