@@ -53,7 +53,7 @@ The transformation by this neural net can be part of PixInsight/Photoshop proces
 
 1. Start from **stretched** LRGB image. Save as 8 bits/channel tif file.
 2. Feed to StarNet.
-3. Open output in Photoshop, correct some of the worst artefacts that will most likely appear in the image. If there are huge stars
+3. Open output in Photoshop, correct some of the worst artifacts that will most likely appear in the image. If there are huge stars
 in the image left, you will have to take care of them in some other way.
 4. Perhaps use some noise reduction (we don't want to push noise up).
 5. Use resulting image to enhance nebulosity using some method (Screen-Mask-Invert for example) or enjoy the result.
@@ -100,7 +100,7 @@ is super nice looking, but in a process of creation of this image you altered mu
 network performance. Also be aware that quality of star removal by the net will never be better than that in your training set, so
 if you want a top-notch quality starless images, be ready to provide training images of even higher quality.
 
-I left one training image to show organisation of folders my code expects. Inside a folder named 'train' there are two sub-folders named
+I left one training image to show organization of folders my code expects. Inside a folder named 'train' there are two sub-folders named
 'original' and starless', both should contain equal number of images with identical name pairs.
 
 <center><h1>Some technical info</h1></center>
@@ -175,7 +175,7 @@ Starless:
 
 <center><h1>FAQ</h1></center>
 
-What is all this 'python-sudo-mumbo-jumbo'?
+**What is all this 'python-sudo-mumbo-jumbo'**?
 
 This whole thing works as command line program, which means that there is no graphical interface: you have to
 run it in a console using some text commands (like ones you see above) and it outputs text (and writes image files
@@ -199,7 +199,7 @@ and installed anaconda you use its native pip to install tensorflow (see above) 
 
 2. Where exactly do I put weights of the network?
 
-All the files you download should be in one folder: all the files with extention .py (starnet.py, train.py, transform.py, etc.) should
+All the files you download should be in one folder: all the files with extension .py (starnet.py, train.py, transform.py, etc.) should
 be in the same folder with weights for the network (model.ckpt.data-00000-of-00001, model.ckpt.index, model.ckpt.meta, etc.)
 
 <center><h1>Some Troubleshooting</h1></center>
@@ -207,10 +207,12 @@ be in the same folder with weights for the network (model.ckpt.data-00000-of-000
 1. <b>Error: 'No package named tensorflow'.</b> Should be pretty self-explanatory: your python can not find tensorflow. That means you did not
 run pip to install it (<b>pip install tensorflow</b>) or something went wrong during this step if you did.
 
-2. <b>Error: ImportError: libcublas.so.9.0: cannot open shared object file: No such file or directory.</b> You are trying to use GPU version of
+2. <b>Error: 'ImportError: libcublas.so.9.0: cannot open shared object file: No such file or directory.'</b> You are trying to use GPU version of
 tensorflow and you don't have CUDA properly installed.
 
-3. <b>Error: ValueError: The passed save_path is not a valid checkpoint: ./model.ckpt.</b> You did not copy network weights into proper location. See above.
+3. <b>Error: 'ValueError: The passed save_path is not a valid checkpoint: ./model.ckpt.'</b> You did not copy network weights into proper location. See above.
+
+Let me know if you have any other issues with the code. (Preferably through *Astrobin*)
 
 <center><h1>Licenses</h1></center>
 
