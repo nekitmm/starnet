@@ -8,7 +8,7 @@ More technically it is a convolutional residual net with encoder-decoder archite
   <img src="https://github.com/nekitmm/starnet/blob/master/for_git/1.jpg"><br><br>
 </div>
 
-**Intro**
+<center><h1>Intro</h1></center>
 
 Star removal using classical methods is a very tricky and painful multi-step procedure, which is hard to master
 and hard to get nice results from, especially in case of images busy with stars.
@@ -20,7 +20,7 @@ galaxies, fine details in nebulosity, HH objects, etc.
 It is intended to be used by astrophotographers. Primary use is for background nebulosity enhancement in rich star fields,
 but it can also help in creation of nice starless image.
 
-**Literature**
+<center><h1>Literature</h1></center>
 
 This code is partially based on pix2pix code and ideas from pix2pix paper.
 
@@ -40,14 +40,14 @@ Other papers I took ideas from or found useful during development:
 
 <a href="http://www.columbia.edu/~jwp2128/Papers/FuHuangetal2017.pdf">Removing rain from single images via a deep detail network</a>
 
-**Usage**
+<center><h1>Usage</h1></center>
 
 Its primary purpose is to partially replace initial steps of star removal in tutorials, like one by Gerald Wechselberger,
 aiming to enhance nebulosity without pushing stars up. The tutorial itself was available under
 <a href="https://dl.dropboxusercontent.com/u/57910417/Howto_enhance_nebuala_without_pushing_stars.wmv">this</a> link, but not any more,
 for some reason. Haven't found any newer links to it. Anyway, you got the idea.
 
-**Suggested Work Flow**
+<center><h1>Suggested Work Flow</h1></center>
 
 The transformation by this neural net can be part of PixInsight/Photoshop processing work flow. Something like this:
 
@@ -59,7 +59,7 @@ in the image left, you will have to take care of them in some other way.
 5. Use resulting image to enhance nebulosity using some method (Screen-Mask-Invert for example) or enjoy the result.
 6. Profit!
 
-**Some tips and tricks**
+<center><h1>Some tips and tricks</h1></center>
 
 1. Do not use heavily processed images for input. If star shapes are unusual (if star reduction techniques were used, too much sharpening,
 deconvolution, image was heavily resized, etc) the performance might be much worse than it could be. I am almost sure. Or maybe it will be
@@ -81,7 +81,7 @@ train a net so it will perform better next time on a similar image.
 5. Sometimes the net will leave small stars in the output, if you feed it very busy image. In this case it is helpful to feed output to the 
 net again.
 
-**Weights for the network**
+<center><h1>Weights for the network</h1></center>
 
 This repository contains only a code base needed to run the net. Pre-trained weights are available for now through my dropbox account
 because they weight too much (lol) - about 700 Mb. You need to download them and unpack into root folder of starnet (the one with all
@@ -91,7 +91,7 @@ python scripts, not into some sub-folder) to begin using StarNet:
 <a href="https://www.dropbox.com/s/ym0wgmx40ue4gaa/starnet_weights.zip?dl=0">LINK</a>
 </div>
 
-**Training Dataset**
+<center><h1>Training Dataset</h1></center>
 
 This is one part I'd like to keep for myself for now, but you can create your own dataset creating starless versions of your images.
 One extremely important note: the only difference between two images (original and starless) should be stars, which are replaced
@@ -103,12 +103,12 @@ if you want a top-notch quality starless images, be ready to provide training im
 I left one training image to show organisation of folders my code expects. Inside a folder named 'train' there are two sub-folders named
 'original' and starless', both should contain equal number of images with identical name pairs.
 
-**Some technical info**
+<center><h1>Some technical info</h1></center>
  
 Throughout the code all input and output images are 8 bits per channel tif images.
 This code in original form will not read any images other than these (like jpeg, etc), but you can change that if you like.
 
-**Prerequisites**
+<center><h1>Prerequisites</h1></center>
 
 Python and Tensorflow, preferably Tensorflow-GPU if you have an NVidia GPU. In this case you will also need CUDA and CuDNN libraries.
 
@@ -152,7 +152,7 @@ GPU was NVidia GeForce 840M 2Gb, compute capability 5.0, CUDA version 9.1
 
 
 
-**Couple more examples**
+<center><h1>Couple more examples</h1></center>
 
 More examples can be found <a href="https://www.astrobin.com/339099/0/">here</a>.
 
@@ -212,7 +212,7 @@ tensorflow and you don't have CUDA properly installed.
 
 3. <b>Error: ValueError: The passed save_path is not a valid checkpoint: ./model.ckpt.</b> You did not copy network weights into proper location. See above.
 
-**Licenses**
+<center><h1>Licenses</h1></center>
 
 Code is available under MIT License, please review LICENSE.md file inside repo. Its very permissive, but no liability
 or warranty of any kind.
