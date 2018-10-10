@@ -105,8 +105,8 @@ I left one training image to show organisation of folders my code expects. Insid
 
 <center><h1>Some technical info</h1></center>
  
-Throughout the code all input and output images are 8 bits per channel tif images.
-This code in original form will not read any images other than these (like jpeg, etc), but you can change that if you like.
+Throughout the code all input and output images I use are 8 bits per channel **tif** images.
+This code should read some other image formats (like jpeg, 16bit tiff, etc), but I did not check all of them.
 
 <center><h1>Prerequisites</h1></center>
 
