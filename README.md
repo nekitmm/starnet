@@ -188,9 +188,7 @@ very briefly:
 is to use pip to install tensorflow and probably few other packages via:
 
         pip install tensorflow
-        
         pip install numpy
-        
         pip install <whatever is missing>
     
 2. For Windows it is a bit trickier because console is unusable to say the least. You can use it, but I prefer Cygwin. Next, you
@@ -206,10 +204,13 @@ be in the same folder with weights for the network (model.ckpt.data-00000-of-000
 
 **Some Troubleshooting**
 
-1. 'No package named tensorflow'. Should be pretty self-explanatory: your python can not find tensorflow. That means you did not
+1. <b>Error: 'No package named tensorflow'.</b> Should be pretty self-explanatory: your python can not find tensorflow. That means you did not
 run pip to install it (pip install tensorflow) or something went wrong during this step if you did.
 
-2. To be continued
+2. Error: ImportError: libcublas.so.9.0: cannot open shared object file: No such file or directory. You are trying to use GPU version of
+tensorflow and you don't have CUDA properly installed.
+
+3. Error: ValueError: The passed save_path is not a valid checkpoint: ./model.ckpt. You did not copy network weights into proper location. See above.
 
 **Licenses**
 
