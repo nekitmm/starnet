@@ -173,7 +173,7 @@ Starless:
 </div>
 
 
-**FAQ**
+<center><h1>FAQ</h1></center>
 
 What is all this 'python-sudo-mumbo-jumbo'?
 
@@ -195,7 +195,7 @@ is to use pip to install tensorflow and probably few other packages via:
 need to install python. I think installing Anaconda for that is by far the best option. After you got up the console of your choice
 and installed anaconda you use its native pip to install tensorflow (see above) and you should be ready to go.
 
-The whole installation should not need more than installing few software packages and typing few command lines!
+<b>The whole installation should not need more than installing few software packages and typing few command lines!</b>
 
 2. Where exactly do I put weights of the network?
 
@@ -205,12 +205,12 @@ be in the same folder with weights for the network (model.ckpt.data-00000-of-000
 **Some Troubleshooting**
 
 1. <b>Error: 'No package named tensorflow'.</b> Should be pretty self-explanatory: your python can not find tensorflow. That means you did not
-run pip to install it (pip install tensorflow) or something went wrong during this step if you did.
+run pip to install it (<b>pip install tensorflow</b>) or something went wrong during this step if you did.
 
-2. Error: ImportError: libcublas.so.9.0: cannot open shared object file: No such file or directory. You are trying to use GPU version of
+2. <b>Error: ImportError: libcublas.so.9.0: cannot open shared object file: No such file or directory.</b> You are trying to use GPU version of
 tensorflow and you don't have CUDA properly installed.
 
-3. Error: ValueError: The passed save_path is not a valid checkpoint: ./model.ckpt. You did not copy network weights into proper location. See above.
+3. <b>Error: ValueError: The passed save_path is not a valid checkpoint: ./model.ckpt.</b> You did not copy network weights into proper location. See above.
 
 **Licenses**
 
