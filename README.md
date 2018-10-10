@@ -88,7 +88,7 @@ because they weight too much (lol) - about 700 Mb. You need to download them and
 python scripts, not into some sub-folder) to begin using StarNet:
 
 <div align="center">
-<a href="https://www.dropbox.com/s/6zrlhrd03hlo810/starnet_weights.zip?dl=0">LINK</a>
+<a href="https://www.dropbox.com/s/ym0wgmx40ue4gaa/starnet_weights.zip?dl=0">LINK</a>
 </div>
 
 **Training Dataset**
@@ -202,7 +202,7 @@ and installed anaconda you use its native pip to install tensorflow (see above) 
 All the files you download should be in one folder: all the files with extention .py (starnet.py, train.py, transform.py, etc.) should
 be in the same folder with weights for the network (model.ckpt.data-00000-of-00001, model.ckpt.index, model.ckpt.meta, etc.)
 
-**Some Troubleshooting**
+<center><h1>Some Troubleshooting</h1></center>
 
 1. <b>Error: 'No package named tensorflow'.</b> Should be pretty self-explanatory: your python can not find tensorflow. That means you did not
 run pip to install it (<b>pip install tensorflow</b>) or something went wrong during this step if you did.
