@@ -57,7 +57,8 @@ The transformation by this neural net can be part of PixInsight/Photoshop proces
 in the image left, you will have to take care of them in some other way.
 4. Perhaps use some noise reduction (we don't want to push noise up).
 5. Use resulting image to enhance nebulosity using some method (Screen-Mask-Invert for example) or enjoy the result.
-6. Profit!
+6. ?
+7. Profit!
 
 <center><h1>Some tips and tricks</h1></center>
 
