@@ -82,16 +82,6 @@ train a net so it will perform better next time on a similar image.
 5. Sometimes the net will leave small stars in the output, if you feed it very busy image. In this case it is helpful to feed output to the 
 net again.
 
-<center><h1>Weights for the network</h1></center>
-
-This repository contains only a code base needed to run the net. Pre-trained weights are available for now through my dropbox account
-because they weight too much (lol) - about 700 Mb. You need to download them and unpack into root folder of starnet (the one with all
-python scripts, not into some sub-folder) to begin using StarNet:
-
-<div align="center">
-<a href="https://www.dropbox.com/s/ym0wgmx40ue4gaa/starnet_weights.zip?dl=0">LINK</a>
-</div>
-
 <center><h1>Training Dataset</h1></center>
 
 This is one part I'd like to keep for myself for now, but you can create your own dataset creating starless versions of your images.
