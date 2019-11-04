@@ -67,7 +67,7 @@ because they weight too much (lol) - about 700 Mb. You need to download them and
 python scripts, not into some sub-folder) to begin using StarNet:
 
 <div align="center">
-<a href="https://www.dropbox.com/s/ym0wgmx40ue4gaa/starnet_weights.zip?dl=0">LINK</a>
+<a href="https://www.dropbox.com/s/atcs42ox4n99w96/starnet_weights.zip?dl=0">LINK</a>
 </div>
 
 <center><h1>Some tips and tricks</h1></center>
