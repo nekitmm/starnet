@@ -60,6 +60,16 @@ in the image left, you will have to take care of them in some other way.
 6. ?
 7. Profit!
 
+<center><h1>Weights for the network</h1></center>
+
+This repository contains only a code base needed to run the net. Pre-trained weights are available for now through my dropbox account
+because they weight too much (lol) - about 700 Mb. You need to download them and unpack into root folder of starnet (the one with all
+python scripts, not into some sub-folder) to begin using StarNet:
+
+<div align="center">
+<a href="https://www.dropbox.com/s/ym0wgmx40ue4gaa/starnet_weights.zip?dl=0">LINK</a>
+</div>
+
 <center><h1>Some tips and tricks</h1></center>
 
 1. Do not use heavily processed images for input. If star shapes are unusual (if star reduction techniques were used, too much sharpening,
