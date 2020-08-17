@@ -7,6 +7,9 @@ I also created a few Jupyter notebooks for ease of use:
 1. starnet_v1_TF2_transform.ipynb - loads and transforms an image.
 2. starnet_v1_TF2.ipynb - more detailed example that loads a model and shows how to train it (really simple as well I think).
 
+Weights for the new model can be found <a href="https://www.dropbox.com/s/lcgn5gvnxpo27s5/starnet_weights2.zip?dl=0">here</a>.
+
+<hr>
 
 **StarNet** is a neural network that can remove stars from images in one simple step leaving only background.
 
