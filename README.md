@@ -1,6 +1,6 @@
 <h1>Update</h1>
 
-Pushed a new implementation os starnet in TF2.x. The whole implementation is in one file starnet_v1_TF2.py.
+Pushed a new implementation os starnet in TF2.x. The whole implementation is in one file *starnet_v1_TF2.py*.
 
 I also created a few Jupyter notebooks for ease of use:
 
