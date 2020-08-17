@@ -102,38 +102,6 @@ class StarNet():
         return tf.clip_by_value(x, 0, 1)
 
     def _augmentator(self, o, s):
-        # rotate
-        if np.random.rand() < 0.33:
-            r = np.random.randint(360)
-            pad = int(self.window_size / 2)
-            bc = np.random.rand()
-            
-            if np.random.rand() < 0.50:
-                resample = img.BICUBIC
-            elif np.random.rand() < 0.75:
-                resample = img.BILINEAR
-            else:
-                resample = img.NEAREST
-            
-            Xtmp = copy.copy(o)
-            Ytmp = copy.copy(s)
-            
-            if np.random.rand() < 0.90:
-                Xtmp = np.pad(Xtmp, ((pad, pad), (pad, pad), (0, 0)), mode = 'reflect')
-                Ytmp = np.pad(Ytmp, ((pad, pad), (pad, pad), (0, 0)), mode = 'reflect')
-            else:
-                Xtmp = np.pad(Xtmp, ((pad, pad), (pad, pad), (0, 0)), mode = 'constant', constant_values = bc)
-                Ytmp = np.pad(Ytmp, ((pad, pad), (pad, pad), (0, 0)), mode = 'constant', constant_values = bc)
-            
-            Xtmp = img.fromarray(np.uint8(Xtmp * 255))
-            Ytmp = img.fromarray(np.uint8(Ytmp * 255))
-            
-            Xtmp = Xtmp.rotate(r, resample = resample)
-            Ytmp = Ytmp.rotate(r, resample = resample)
-            
-            o = np.array(Xtmp)[pad:-pad, pad:-pad] / 255
-            s = np.array(Ytmp)[pad:-pad, pad:-pad] / 255
-        
         # flip horizontally
         if np.random.rand() < 0.50:
             o = np.flip(o, axis = 1)

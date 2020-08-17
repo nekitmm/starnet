@@ -1,9 +1,11 @@
-To download pre-trained weights, follow this link (~500Mb)
+To download pre-trained weights, follow the links below:
+
+For TF1.x implementation:
 
 https://www.dropbox.com/s/atcs42ox4n99w96/starnet_weights.zip?dl=0
 
+For TF2.x implementation:
+
+https://www.dropbox.com/s/lcgn5gvnxpo27s5/starnet_weights2.zip?dl=0
+
 And extract all the content into root folder (folder with this file).
-
-
-
-Or you might also use lfs (if you know what that means, otherwise ignore this).
