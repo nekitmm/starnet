@@ -1,3 +1,13 @@
+<h1>Update</h1>
+
+Pushed a new implementation os starnet in TF2.x. The whole implementation is in one file starnet_v1_TF2.py.
+
+I also created a few Jupyter notebooks for ease of use:
+
+1. starnet_v1_TF2_transform.ipynb - loads and transforms an image.
+2. starnet_v1_TF2.ipynb - more detailed example that loads a model and shows how to train it (really simple as well I think).
+
+
 **StarNet** is a neural network that can remove stars from images in one simple step leaving only background.
 
 More technically it is a convolutional residual net with encoder-decoder architecture and with L1, Adversarial and Perceptual losses.
