@@ -340,15 +340,15 @@ class StarNet():
         
         output = copy.deepcopy(image)
         
-        h, w, _ = image.shape
-        ith = int(h / self.stride)
-        itw = int(w / self.stride)
         for i in range(ith):
             for j in range(itw):
-                tile = np.expand_dims(image[self.stride*i:self.stride*i+self.window_size, self.stride*j:self.stride*j+self.window_size, :], axis = 0)
+                x = self.stride * i
+                y = self.stride * j
+                
+                tile = np.expand_dims(image[x:x+self.window_size, y:y+self.window_size, :], axis = 0)
                 tile = (self.G(tile)[0] + 1) / 2
                 tile = tile[offset:offset+self.stride, offset:offset+self.stride, :]
-                output[self.stride*i+offset:self.stride*(i+1)+offset, self.stride*j+offset:self.stride*(j+1)+offset, :] = tile
+                output[x+offset:self.stride*(i+1)+offset, y+offset:self.stride*(j+1)+offset, :] = tile
         
         output = np.clip(output, 0, 1)
         
