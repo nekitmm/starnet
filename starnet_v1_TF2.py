@@ -8,6 +8,7 @@ import tensorflow.keras as K
 import tensorflow.keras.layers as L
 import copy
 import pickle
+import tifffile as tiff
 
 from matplotlib import pyplot as plt
 
@@ -303,8 +304,15 @@ class StarNet():
             with open(history_filename + '_' + self.mode + '.pkl', 'wb') as f:
                 pickle.dump(self.history, f)
       
-    def transform(self, name):
-        image = np.array(img.open(name), dtype = np.float32)
+    def transform(self, in_name, out_name):
+        data = tiff.imread(in_name)
+        input_dtype = data.dtype
+        if input_dtype == 'uint16':
+            image = (data / 255.0 / 255.0).astype('float32')
+        elif input_dtype == 'uint8':
+            image = (data / 255.0).astype('float32')
+        else:
+            raise ValueError('Unknown image dtype:', data.dtype)
         
         if self.mode == 'Greyscale' and len(image.shape) == 3:
             raise ValueError('You loaded Greyscale model, but the image is RGB!')
@@ -334,8 +342,6 @@ class StarNet():
         image = np.concatenate((image, image[:, (w - offset) :, :]), axis = 1)
         image = np.concatenate((image[:, : offset, :], image), axis = 1)
         
-        image /= 255
-        
         image = image * 2 - 1
         
         output = copy.deepcopy(image)
@@ -353,10 +359,15 @@ class StarNet():
         output = np.clip(output, 0, 1)
         
         if self.mode == 'Greyscale':
-            return output[offset:-(offset+dh), offset:-(offset+dw), 0] * 255
+            output = output[offset:-(offset+dh), offset:-(offset+dw), 0]
         else:
-            return output[offset:-(offset+dh), offset:-(offset+dw), :] * 255
-    
+            output = output[offset:-(offset+dh), offset:-(offset+dw), :]
+        
+        if input_dtype == 'uint8':
+            tiff.imsave(out_name, (output * 255).astype('uint8'))
+        else:
+            tiff.imsave(out_name, (output * 255 * 255).astype('uint16'))
+        
     def _generator(self, m):
         layers = []
     
