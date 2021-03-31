@@ -323,6 +323,10 @@ class StarNet():
         if self.mode == 'RGB' and len(image.shape) == 2:
             raise ValueError('You loaded RGB model, but the image is Greyscale!')
         
+        if self.mode == 'RGB' and image.shape[2] == 4:
+            print("Input image has 4 channels. Removing Alpha-Channel")
+            image=image[:,:,[0,1,2]]
+        
         offset = int((self.window_size - self.stride) / 2)
         
         h, w, _ = image.shape
