@@ -330,7 +330,6 @@ class StarNet():
         
         if self.mode == 'RGB' and image.shape[2] == 4:
             print("Input image has 4 channels. Removing Alpha-Channel")
-            #from IPython import embed;embed()
             image=image[:,:,[0,1,2]]
         
         offset = int((self.window_size - self.stride) / 2)
