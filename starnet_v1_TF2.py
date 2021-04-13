@@ -306,6 +306,11 @@ class StarNet():
       
     def transform(self, in_name, out_name):
         data = tiff.imread(in_name)
+        if len(data.shape) > 3:
+            layer = input("Tiff has %d layers, please enter layer to process: "%data.shape[0])
+            layer = int(layer)
+            data=data[layer]
+            
         input_dtype = data.dtype
         if input_dtype == 'uint16':
             image = (data / 255.0 / 255.0).astype('float32')
@@ -313,7 +318,7 @@ class StarNet():
             image = (data / 255.0).astype('float32')
         else:
             raise ValueError('Unknown image dtype:', data.dtype)
-        
+            
         if self.mode == 'Greyscale' and len(image.shape) == 3:
             raise ValueError('You loaded Greyscale model, but the image is RGB!')
             
