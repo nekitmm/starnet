@@ -1,0 +1,15 @@
+# To run: conda env create -f environment-windows.yml
+name: starnet
+channels:
+    - conda-forge
+dependencies:
+    - python=3.9
+    - pip
+    - Pillow
+    - matplotlib
+    - numpy
+    - ipython
+    - tifffile
+    - pip:
+        - tensorflow-cpu
+        - tensorflow-directml-plugin

@@ -1,3 +1,7 @@
+<h1>Update 2</h1>
+ Updated documentation for using Tensorflow-directml on windows for broad support on any modern gpu with sufficient memory.
+
+<hr>
 <h1>Update</h1>
 
 Pushed a new implementation os starnet in TF2.x. The whole implementation is in one file *starnet_v1_TF2.py*.
@@ -127,20 +131,55 @@ I left one training image to show organization of folders my code expects. Insid
 Throughout the code all input and output images I use are 8 bits per channel **tif** images.
 This code should read some other image formats (like jpeg, 16bit tiff, etc), but I did not check all of them.
 
-<center><h1>Prerequisites</h1></center>
+<center><h1>Prerequisites and installation Guide</h1></center>
 
-Python and Tensorflow, preferably Tensorflow-GPU if you have an NVidia GPU. In this case you will also need CUDA and CuDNN libraries.
+for all environments, using conda is strongly encouraged, installation instructions assume a conda install of either Anaconda python or miniconda:
+  - https://docs.conda.io/en/latest/miniconda.html
 
-I tested it in Python 3.6.3 (Anaconda) + TensorFlow-GPU 1.4.0
+## Windows (New!)
 
-Environment: I used Win 10 + Cygwin
+On windows we can now run starnet on GPU on any modern graphics card! (yes AMD and Intel included)
 
-GPU was NVidia GeForce 840M 2Gb, compute capability 5.0, CUDA version 9.1
+### Prerequisites
+
+Windows 10 Version 1709, 64-bit (Build 16299 or higher) or Windows 11 Version 21H2, 64-bit (Build 22000 or higher)
+
+### Installation
+
+Once anaconda is installed, you can open an "anaconda powershell prompt" to proceed.
+
+We use the environment config file provided to configure and install all the dependencies:
+
+#### With GPU support (Windows):
+```
+conda env create -f environment-windows.yml
+```
+#### With CUDA support (linux or windows):
+```
+conda env create -f environment-lnx-cuda.yml
+```
+#### CPU only(Mac, Linux, Windows):
+```
+conda env create -f environment-cpu.yml
+```
+### Post installation
+Initialize the environment with:
+```
+conda activate starnet
+```
+And you're ready to go!
 
 
+Originally tested on:
+- Win 10 + Cygwin
+- NVidia GeForce 840M 2Gb, compute capability 5.0, CUDA version 9.1
 
+Windows general GPU support tested on:
+- Win 10 12H1
+- AMD RX 6800-XT 16GB
+
+<center><h1>Usage</h1></center>
  
-      Modes of use:
       
       python.exe -u starnet.py transform <input_image> - The most probable use. This command will transform 
                                                          input image (namely will remove stars) and will 
@@ -166,9 +205,6 @@ GPU was NVidia GeForce 840M 2Gb, compute capability 5.0, CUDA version 9.1
                                                          of transformations. Fast option to take a look at 
                                                          possible result.
                                                          By default output will be in './test' sub-folder.
-
-
-
 
 
 <center><h1>Couple more examples</h1></center>
@@ -199,22 +235,6 @@ Starless:
 This whole thing works as command line program, which means that there is no graphical interface: you have to
 run it in a console using some text commands (like ones you see above) and it outputs text (and writes image files
 of course!).
-
-The way you get on board with all this will depend on your OS and is hard to squeeze instructions into few words but
-very briefly:
-
-1. For MacOS/Linux it is pretty simple. You should already have console up with python installed. The only thing you will need
-is to use pip to install tensorflow and probably few other packages via:
-
-        pip install tensorflow
-        pip install numpy
-        pip install <whatever is missing>
-    
-2. For Windows it is a bit trickier because console is unusable to say the least. You can use it, but I prefer Cygwin. Next, you
-need to install python. I think installing Anaconda for that is by far the best option. After you got up the console of your choice
-and installed anaconda you use its native pip to install tensorflow (see above) and you should be ready to go.
-
-<b>The whole installation should not need more than installing few software packages and typing few command lines!</b>
 
 2. Where exactly do I put weights of the network?
 

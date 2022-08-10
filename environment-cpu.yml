@@ -1,0 +1,13 @@
+# To run: conda env create -f environment-lnx-cpu.yml
+name: starnet
+channels:
+    - conda-forge
+dependencies:
+    - python=3.9
+    - pip
+    - Pillow
+    - ipython
+    - matplotlib
+    - numpy
+    - tifffile
+    - tensorflow-cpu
